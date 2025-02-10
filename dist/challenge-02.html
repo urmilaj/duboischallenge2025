@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.2">
+<title>Acres Of Land Owned By Negroes In Georgia | Du Bois Challenge 2025</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air.aad62322.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.aad62322.css">
+<link rel="modulepreload" href="./_observablehq/client.089d06c5.js">
+<link rel="modulepreload" href="./_observablehq/runtime.f168f711.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.a7574edc.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/db7b0fcd.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/063eb405.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/407f7a1f.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e95f898e.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/bd0afa17.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/6495590f.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/84d7b8e9.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/2c0cdfa2.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/626bedc4.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/00c41b5d.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/b5f7cdc6.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/ef06b1ff.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/6f15f633.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/35880c2a.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/60bb70b3.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/33fb7288.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/dcd02767.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/f1db2593.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/034b7bcb.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/4bb53638.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/bbafde58.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/aa5b35a8.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/32c7fec2.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/d436e3b0.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/b6952b03.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/a4e530fb.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/be692bd9.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/5bc129e1.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/19c92b44.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/f31b5398.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/0c259fbf.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/da4a6ccc.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/5eed35fd.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/e67acb27.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/8ac9039b.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.089d06c5.js";
+import {registerFile} from "./_observablehq/stdlib.a7574edc.js";
+
+registerFile("./data/challenge_02_data.csv", {"name":"./data/challenge_02_data.csv","mimeType":"text/csv","path":"./_file/data/challenge_02_data.bc7d1f0b.csv","lastModified":1739207440682,"size":369});
+
+define({id: "88a72530", inputs: ["FileAttachment"], outputs: ["acresOfLand"], body: (FileAttachment) => {
+const acresOfLand = FileAttachment("./data/challenge_02_data.csv").csv({ typed: true });
+return {acresOfLand};
+}});
+
+define({id: "090bf49a", inputs: ["d3","acresOfLand","width"], outputs: ["margin","parseYear","formatYear","height","x","y"], body: (d3,acresOfLand,width) => {
+const margin = { top: 80, left: 80, bottom: 50, right: 100 };
+
+const parseYear = d3.timeParse("%Y");
+const formatYear = d3.timeFormat("%Y");
+
+const height = 800;
+
+const x = d3
+  .scaleLinear()
+  .domain([d3.min(acresOfLand, (d) => d.Land), d3.max(acresOfLand, (d) => d.Land)])
+  .range([margin.left, width - margin.right]);
+
+const y = d3
+  .scaleTime()
+  .domain([parseYear(1874), parseYear(1899)])
+  .range([margin.top, height - margin.bottom]);
+return {margin,parseYear,formatYear,height,x,y};
+}});
+
+define({id: "974e19fa", inputs: ["svg","width","height","margin","acresOfLand","y","parseYear","x","display"], body: async (svg,width,height,margin,acresOfLand,y,parseYear,x,display) => {
+display(await(
+svg`<svg width="${width}" height="${height}" style="background-color: #EADDCE;">
+<text x=${width/2} y=40 text-anchor="middle" style="font-weight:bold;">ACRES OF LAND OWNED BY NEGROES IN GEORGIA.</text>
+<g transform="translate(${margin.left}, 0)">
+${acresOfLand.map(d=>svg`<text x=0 dx="-10" y=${y(parseYear(d.Date))} text-anchor="end" alignment-baseline="middle">${d.Date}</text>
+<g transform="translate(0, -12)"><rect x=0 y=${y(parseYear(d.Date))} width=${x(d.Land)} height=20 fill="#DD1C3D"/></g>`)}</g>
+<text x=${x(acresOfLand[0].Land)} y=${y(parseYear(1874))} dx=5 alignment-baseline="middle">${acresOfLand[0].Land.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</text>
+<text x=${x(acresOfLand[acresOfLand.length-1].Land)/2} y=${y(parseYear(1899))} dx=5 text-anchor="start" alignment-baseline="middle">${acresOfLand[acresOfLand.length-1].Land.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</text>
+</svg>`
+))
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Du Bois Challenge 2025</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link"><a href="./challenge-01">Value of Land Owned by Georgia Negroes</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./challenge-02">Acres Of Land Owned By Negroes In Georgia</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<p>Challenge 02 - Feb 10</p>
+<div class="observablehq observablehq--block"><!--:88a72530:--></div>
+<div class="observablehq observablehq--block"><!--:090bf49a:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:974e19fa:--></div>
+<style>
+  * {
+    font-family: sans-serif;
+  }
+</style>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./challenge-01"><span>Value of Land Owned by Georgia Negroes</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-02-11T00:34:46">Feb 11, 2025</a>.</div>
+</footer>
+</div>
+</body>
+</html>
