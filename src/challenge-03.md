@@ -2,7 +2,7 @@
 title: Land Owned By Negroes In Georgia, U.S.A 1870-1900
 ---
 
-Challenge 02 - Feb 17 (Made this super late, Feb 23)
+Challenge 03 - Feb 17 (Made this super late, Feb 23)
 
 ```js
 const georgiaMap = FileAttachment("data/challenge_03/georgia.json").json();
